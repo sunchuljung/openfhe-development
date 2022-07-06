@@ -151,7 +151,7 @@ class SchemeBase {
   virtual bool ParamsGenCKKSRNS(std::shared_ptr<CryptoParametersBase<Element>> cryptoParams,
                          usint cyclOrder,
                          usint numPrimes,
-                         usint scaleExp,
+                         usint scalingFactorBits,
                          usint digitSize,
                          SecretKeyDist secretKeyDist,
                          usint firstModSize,
@@ -162,7 +162,7 @@ class SchemeBase {
                          enum MultiplicationTechnique multTech) const {
     if (m_ParamsGen) {
       return m_ParamsGen->ParamsGenCKKSRNS(cryptoParams, cyclOrder, numPrimes,
-                                    scaleExp, digitSize, secretKeyDist, firstModSize, numPartQ,
+                                    scalingFactorBits, digitSize, secretKeyDist, firstModSize, numPartQ,
                                     ksTech, rsTech, encTech, multTech);
     }
     OPENFHE_THROW(not_implemented_error,
