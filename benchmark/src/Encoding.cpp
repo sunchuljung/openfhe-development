@@ -177,7 +177,7 @@ void BM_encoding_PackedCKKSPlaintext(benchmark::State& state) {
 
     CCParams<CryptoContextCKKSRNS> parameters;
     parameters.SetRingDim(4096);
-    parameters.SetScalingFactorBits(50);
+    parameters.SetScalingModSize(50);
     parameters.SetBatchSize(8);
     parameters.SetKeySwitchTechnique(BV);
     parameters.SetRescalingTechnique(FIXEDMANUAL);

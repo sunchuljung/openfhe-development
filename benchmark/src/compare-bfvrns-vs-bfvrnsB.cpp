@@ -84,7 +84,7 @@ CryptoContext<DCRTPoly> GenerateBFVrnsContext(usint ptm, usint dcrtBits) {
     CCParams<CryptoContextBFVRNS> parameters;
     parameters.SetPlaintextModulus(ptm);
     parameters.SetEvalMultCount(mult_depth);
-    parameters.SetScalingFactorBits(dcrtBits);
+    parameters.SetScalingModSize(dcrtBits);
 
     CryptoContext<DCRTPoly> cc = GenCryptoContext(parameters);
     cc->Enable(PKE);
@@ -107,7 +107,7 @@ CryptoContext<DCRTPoly> GenerateBFVrnsBContext(usint ptm, usint dcrtBits) {
     CCParams<CryptoContextBFVRNS> parameters;
     parameters.SetPlaintextModulus(ptm);
     parameters.SetEvalMultCount(mult_depth);
-    parameters.SetScalingFactorBits(dcrtBits);
+    parameters.SetScalingModSize(dcrtBits);
     parameters.SetMultiplicationTechnique(BEHZ);
 
     CryptoContext<DCRTPoly> cc = GenCryptoContext(parameters);
@@ -131,7 +131,7 @@ CryptoContext<DCRTPoly> GenerateFlatBFVrnsContext(usint ptm, usint dcrtBits, usi
     CCParams<CryptoContextBFVRNS> parameters;
     parameters.SetPlaintextModulus(ptm);
     parameters.SetMaxDepth(0);
-    parameters.SetScalingFactorBits(dcrtBits);
+    parameters.SetScalingModSize(dcrtBits);
     parameters.SetRingDim(n);
 
     CryptoContext<DCRTPoly> cc = GenCryptoContext(parameters);
@@ -145,7 +145,7 @@ CryptoContext<DCRTPoly> GenerateFlatBFVrnsBContext(usint ptm, usint dcrtBits, us
     CCParams<CryptoContextBFVRNS> parameters;
     parameters.SetPlaintextModulus(ptm);
     parameters.SetMaxDepth(0);
-    parameters.SetScalingFactorBits(dcrtBits);
+    parameters.SetScalingModSize(dcrtBits);
     parameters.SetRingDim(n);
     parameters.SetMultiplicationTechnique(BEHZ);
 
