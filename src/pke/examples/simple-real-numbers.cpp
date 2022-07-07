@@ -121,7 +121,7 @@ int main() {
    */
   CCParams<CryptoContextCKKSRNS> parameters;
   parameters.SetMultiplicativeDepth(multDepth);
-  parameters.SetScalingFactorBits(scaleFactorBits);
+  parameters.SetScalingModSize(scaleFactorBits);
   parameters.SetBatchSize(batchSize);
   parameters.SetRescalingTechnique(FLEXIBLEAUTO);
 

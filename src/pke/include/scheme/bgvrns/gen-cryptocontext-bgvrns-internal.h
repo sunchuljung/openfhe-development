@@ -87,7 +87,7 @@ typename ContextGeneratorType::ContextType genCryptoContextBGVRNSInternal(const 
         parameters.GetDigitSize(),
         parameters.GetSecretKeyDist(),
         parameters.GetFirstModSize(),
-        parameters.GetScalingFactorBits(),
+        parameters.SetScalingModSize(),
         numLargeDigits,
         parameters.GetMultiHopQModulusLowerBound(),
         parameters.GetKeySwitchTechnique(),

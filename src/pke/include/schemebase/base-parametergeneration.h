@@ -100,7 +100,7 @@ public:
    * parameters.
    * @param cyclOrder the cyclotomic order.
    * @param numPrimes number of modulus towers to support.
-   * @param scalingFactorBits the bit-width for plaintexts and DCRTPoly's.
+   * @param scalingModSize the bit-width for plaintexts and DCRTPoly's.
    * @param digitSize the digit size
    * @param secretKeyDist
    * @param ksTech the key switching technique used (e.g., BV or GHS)
@@ -112,7 +112,7 @@ public:
       std::shared_ptr<CryptoParametersBase<Element>> cryptoParams,
       usint cyclOrder,
       usint numPrimes,
-      usint scalingFactorBits,
+      usint scalingModSize,
       usint digitSize,
       enum SecretKeyDist secretKeyDist,
       usint firstModSize,

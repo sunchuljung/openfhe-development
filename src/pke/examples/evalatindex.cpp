@@ -133,7 +133,7 @@ void CKKSEvalAtIndex2n() {
   CCParams<CryptoContextCKKSRNS> parameters;
   parameters.SetRingDim(cyclOrder / 2);
   parameters.SetMultiplicativeDepth(2);
-  parameters.SetScalingFactorBits(40);
+  parameters.SetScalingModSize(40);
   parameters.SetDigitSize(10);
   parameters.SetBatchSize(16);
   parameters.SetKeySwitchTechnique(BV);

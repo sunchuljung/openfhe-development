@@ -167,7 +167,7 @@ void AutomaticRescaleDemo(RescalingTechnique rsTech) {
   uint32_t batchSize = 8;
   CCParams<CryptoContextCKKSRNS> parameters;
   parameters.SetMultiplicativeDepth(5);
-  parameters.SetScalingFactorBits(50);
+  parameters.SetScalingModSize(50);
   parameters.SetRescalingTechnique(rsTech);
   parameters.SetBatchSize(batchSize);
 
@@ -338,7 +338,7 @@ void ManualRescaleDemo(RescalingTechnique rsTech) {
   uint32_t batchSize = 8;
   CCParams<CryptoContextCKKSRNS> parameters;
   parameters.SetMultiplicativeDepth(5);
-  parameters.SetScalingFactorBits(50);
+  parameters.SetScalingModSize(50);
   parameters.SetBatchSize(batchSize);
 
   CryptoContext<DCRTPoly> cc = GenCryptoContext(parameters);
@@ -471,7 +471,7 @@ void HybridKeySwitchingDemo1() {
   uint32_t batchSize = 8;
   CCParams<CryptoContextCKKSRNS> parameters;
   parameters.SetMultiplicativeDepth(5);
-  parameters.SetScalingFactorBits(50);
+  parameters.SetScalingModSize(50);
   parameters.SetBatchSize(batchSize);
   parameters.SetRescalingTechnique(FLEXIBLEAUTO);
   parameters.SetNumLargeDigits(dnum);
@@ -588,7 +588,7 @@ void HybridKeySwitchingDemo2() {
   uint32_t batchSize = 8;
   CCParams<CryptoContextCKKSRNS> parameters;
   parameters.SetMultiplicativeDepth(5);
-  parameters.SetScalingFactorBits(50);
+  parameters.SetScalingModSize(50);
   parameters.SetBatchSize(batchSize);
   parameters.SetRescalingTechnique(FLEXIBLEAUTO);
   parameters.SetNumLargeDigits(dnum);
@@ -715,7 +715,7 @@ void FastRotationsDemo1() {
   uint32_t batchSize = 8;
   CCParams<CryptoContextCKKSRNS> parameters;
   parameters.SetMultiplicativeDepth(1);
-  parameters.SetScalingFactorBits(50);
+  parameters.SetScalingModSize(50);
   parameters.SetBatchSize(batchSize);
 
   CryptoContext<DCRTPoly> cc = GenCryptoContext(parameters);
@@ -831,7 +831,7 @@ void FastRotationsDemo2() {
 
   CCParams<CryptoContextCKKSRNS> parameters;
   parameters.SetMultiplicativeDepth(1);
-  parameters.SetScalingFactorBits(50);
+  parameters.SetScalingModSize(50);
   parameters.SetBatchSize(batchSize);
   parameters.SetRescalingTechnique(FLEXIBLEAUTO);
   parameters.SetKeySwitchTechnique(BV);

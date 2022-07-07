@@ -82,7 +82,7 @@ void SHERun() {
   parameters.SetRootHermiteFactor(1.0048);
   parameters.SetEvalMultCount(5);
   parameters.SetMaxDepth(3);
-  parameters.SetScalingFactorBits(55);
+  parameters.SetScalingModSize(55);
   parameters.SetMultiplicationTechnique(BEHZ);
 
   CryptoContext<DCRTPoly> cryptoContext = GenCryptoContext(parameters);

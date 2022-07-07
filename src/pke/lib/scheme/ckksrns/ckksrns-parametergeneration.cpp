@@ -66,7 +66,7 @@ const size_t AUXMODSIZE = 60;
 
 bool ParameterGenerationCKKSRNS::ParamsGenCKKSRNS(
           std::shared_ptr<CryptoParametersBase<DCRTPoly>> cryptoParams, usint cyclOrder,
-          usint numPrimes, usint scalingFactorBits, usint digitSize, SecretKeyDist secretKeyDist,
+          usint numPrimes, usint scalingModSize, usint digitSize, SecretKeyDist secretKeyDist,
           usint firstModSize,
           uint32_t numPartQ,
           KeySwitchTechnique ksTech,
@@ -87,7 +87,7 @@ bool ParameterGenerationCKKSRNS::ParamsGenCKKSRNS(
   SecurityLevel stdLevel = cryptoParamsCKKSRNS->GetStdLevel();
   uint32_t auxBits = AUXMODSIZE;
   uint32_t n = cyclOrder / 2;
-  uint32_t qBound = firstModSize + (numPrimes - 1) * scalingFactorBits + extraModSize;
+  uint32_t qBound = firstModSize + (numPrimes - 1) * scalingModSize + extraModSize;
   // Estimate ciphertext modulus Q bound (in case of GHS/HYBRID P*Q)
   if (ksTech == HYBRID) {
     qBound +=
@@ -130,7 +130,7 @@ bool ParameterGenerationCKKSRNS::ParamsGenCKKSRNS(
   }
   //// End HE Standards compliance logic/check
 
-  usint dcrtBits = scalingFactorBits;
+  usint dcrtBits = scalingModSize;
 
   uint32_t vecSize = (extraModSize == 0) ? numPrimes : numPrimes + 1;
   std::vector<NativeInteger> moduliQ(vecSize);

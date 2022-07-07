@@ -157,7 +157,7 @@ void AutomaticRescaleDemo(RescalingTechnique rsTech) {
   uint32_t batchSize = 8;
   CCParams<CryptoContextCKKSRNS> parameters;
   parameters.SetMultiplicativeDepth(6);
-  parameters.SetScalingFactorBits(90);
+  parameters.SetScalingModSize(90);
   parameters.SetBatchSize(batchSize);
 
   CryptoContext<DCRTPoly> cc = GenCryptoContext(parameters);
@@ -243,7 +243,7 @@ void ManualRescaleDemo(RescalingTechnique rsTech) {
   uint32_t batchSize = 8;
   CCParams<CryptoContextCKKSRNS> parameters;
   parameters.SetMultiplicativeDepth(5);
-  parameters.SetScalingFactorBits(90);
+  parameters.SetScalingModSize(90);
   parameters.SetBatchSize(batchSize);
 
   CryptoContext<DCRTPoly> cc = GenCryptoContext(parameters);
@@ -321,7 +321,7 @@ void HybridKeySwitchingDemo1() {
   uint32_t batchSize = 8;
   CCParams<CryptoContextCKKSRNS> parameters;
   parameters.SetMultiplicativeDepth(5);
-  parameters.SetScalingFactorBits(90);
+  parameters.SetScalingModSize(90);
   parameters.SetBatchSize(batchSize);
   parameters.SetRescalingTechnique(FIXEDAUTO);
   // uint32_t ringDimension = 0;  // 0 means the library will choose it based on securityLevel
@@ -477,7 +477,7 @@ void HybridKeySwitchingDemo2() {
   uint32_t batchSize = 8;
   CCParams<CryptoContextCKKSRNS> parameters;
   parameters.SetMultiplicativeDepth(5);
-  parameters.SetScalingFactorBits(90);
+  parameters.SetScalingModSize(90);
   parameters.SetBatchSize(batchSize);
   parameters.SetRescalingTechnique(FIXEDAUTO);
 
@@ -622,7 +622,7 @@ void FastRotationsDemo1() {
   uint32_t batchSize = 8;
   CCParams<CryptoContextCKKSRNS> parameters;
   parameters.SetMultiplicativeDepth(1);
-  parameters.SetScalingFactorBits(90);
+  parameters.SetScalingModSize(90);
   parameters.SetBatchSize(batchSize);
 
   CryptoContext<DCRTPoly> cc = GenCryptoContext(parameters);
@@ -715,7 +715,7 @@ void FastRotationsDemo2() {
   uint32_t batchSize = 8;
   CCParams<CryptoContextCKKSRNS> parameters;
   parameters.SetMultiplicativeDepth(1);
-  parameters.SetScalingFactorBits(90);
+  parameters.SetScalingModSize(90);
   parameters.SetBatchSize(batchSize);
   parameters.SetRescalingTechnique(FIXEDAUTO);
   parameters.SetKeySwitchTechnique(BV);

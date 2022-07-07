@@ -100,7 +100,7 @@ serverSetupAndWrite(int multDepth, int scaleFactorBits, int batchSize) {
 
     CCParams<CryptoContextCKKSRNS> parameters;
     parameters.SetMultiplicativeDepth(multDepth);
-    parameters.SetScalingFactorBits(scaleFactorBits);
+    parameters.SetScalingModSize(scaleFactorBits);
     parameters.SetBatchSize(batchSize);
 
     CryptoContext<DCRTPoly> serverCC = GenCryptoContext(parameters);
