@@ -126,6 +126,7 @@ CryptoContext<Element> UnitTestGenerateContext(const UnitTestCCParams& params) {
     cc->Enable(LEVELEDSHE);
     cc->Enable(ADVANCEDSHE);
     cc->Enable(PRE);
+    cc->Enable(FHE);
     cc->Enable(MULTIPARTY);
 
     return cc;
