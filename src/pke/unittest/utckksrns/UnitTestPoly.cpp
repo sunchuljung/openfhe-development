@@ -204,6 +204,8 @@ protected:
             //for(auto a : tmp_b)
             //    std::cerr << " " << a;
             //std::cerr << std::endl;
+            std::cout << "expected: " << plaintextResult1->GetCKKSPackedValue() << std::endl;
+            std::cout << "actual: " << results1->GetCKKSPackedValue() << std::endl;
             checkEquality(plaintextResult1->GetCKKSPackedValue(), results1->GetCKKSPackedValue(), eps,
                 failmsg + " EvalPoly with positive coefficients fails");
 
@@ -265,9 +267,9 @@ TEST_P(UTCKKSRNS_EVAL_POLY, CKKSRNS) {
     auto test = GetParam();
 
     switch (test.testCaseType) {
-    //case EVAL_POLY:
-    //    UnitTest_EvalPoly(test, test.buildTestName());
-    //    break;
+    case EVAL_POLY:
+        UnitTest_EvalPoly(test, test.buildTestName());
+        break;
     default:
         break;
     }

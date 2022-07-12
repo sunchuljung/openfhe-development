@@ -424,8 +424,13 @@ Ciphertext<DCRTPoly> AdvancedSHECKKSRNS::EvalPolyPS(
         // non-power of 2
         int64_t powerOf2 = 1 << (int64_t)std::floor(std::log2(i));
         int64_t rem = i % powerOf2;
-        usint levelDiff = powers[rem - 1]->GetLevel() - powers[powerOf2 - 1]->GetLevel();
-        cc->LevelReduceInPlace(powers[rem - 1], nullptr, levelDiff);
+        //powers[0] -> level 0
+        //powers[1] -> level 1
+        int levelDiff = powers[rem - 1]->GetLevel() - powers[powerOf2 - 1]->GetLevel();
+        if (levelDiff > 0)
+          cc->LevelReduceInPlace(powers[rem - 1], nullptr, levelDiff);
+        else
+          cc->LevelReduceInPlace(powers[powerOf2 - 1], nullptr, -levelDiff);
         powers[i-1] = cc->EvalMult(powers[powerOf2 - 1], powers[rem - 1]);
         cc->ModReduceInPlace(powers[i - 1]);
       }
